@@ -1,0 +1,57 @@
+section {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to right top,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
+}
+
+ul {
+  list-style-type: none;
+}
+.check {
+  width: 0.8em;
+  height: 0.8em;
+  cursor: pointer;
+  background-color: rgb(0, 0, 0);
+  border: 1px solid rgb(158, 153, 153);
+}
+.check:checked {
+  background-color: black;
+}
+.task {
+  font-size: 18px;
+  padding: 0 10px;
+  width: fit-content;
+  background: transparent;
+  border: none;
+  color: rgb(0, 0, 0);
+}
+.task:focus {
+  outline: none;
+}
+.app ul li i {
+  float: right;
+  cursor: pointer;
+}
+.app ul li i:hover {
+  color: rgb(255, 82, 82);
+}
+.completed {
+  text-decoration: line-through;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
