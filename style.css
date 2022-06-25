@@ -99,3 +99,14 @@ li {
   display: flex;
   align-items: center;
 }
+
+@media only screen and (max-width: 800px) {
+  ul#ul-list {
+    position: relative;
+    left: -1rem;
+  }
+  input#name {
+    position: relative;
+    right: 0.6rem;
+  }
+}
