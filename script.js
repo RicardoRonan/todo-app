@@ -9,7 +9,7 @@ function loadTasks() {
   tasks.forEach((task) => {
     const list = document.querySelector("ul");
     const li = document.createElement("li");
-    li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check" ${
+    li.innerHTML = `<li><input type="checkbox" onclick="taskComplete(this)" class="check" ${
       task.completed ? "checked" : ""
     }>
           <input type="text" value="${
@@ -17,7 +17,7 @@ function loadTasks() {
           }" class="task m-2 form-control ${
       task.completed ? "completed" : ""
     }" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-          <i class="fa fa-trash" onclick="removeTask(this)"></i>`;
+          <i class="fa fa-trash" onclick="removeTask(this)"></i></li>`;
     list.insertBefore(li, list.children[0]);
     console.log(tasks);
   });
@@ -41,10 +41,10 @@ function addTask() {
     ])
   );
   const li = document.createElement("li");
-  li.innerHTML = `
-    <input type="checkbox" onclick="taskComplete(this)" class="check">
-      <input type="text"  value="${task.value}" class="task form-control" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-      <i class="fa fa-trash" onclick="removeTask(this)"></i>`;
+  li.innerHTML = `<li>
+    <input type="checkbox" id="check" onclick="taskComplete(this)" class="check">
+      <input type="text" value="${task.value}" class="task form-control" onfocus="getCurrentTask(this)" onblur="editTask(this)">
+      <i class="fa fa-trash" onclick="removeTask(this)"></i></li>`;
   list.insertBefore(li, list.children[0]);
   task.value = "";
 }
