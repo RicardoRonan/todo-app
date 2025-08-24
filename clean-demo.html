@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="clean">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Design System Demo - Liquid Glass</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Clean Design System -->
+    <link rel="stylesheet" href="css/clean.tokens.css">
+    <link rel="stylesheet" href="css/clean.utilities.css">
+    <link rel="stylesheet" href="css/clean.components.css">
+    
+    <style>
+        /* Demo-specific styles */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: var(--clean-font-family);
+        }
+        
+        .demo-section {
+            margin: var(--clean-space-8) 0;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--clean-space-6);
+            margin: var(--clean-space-6) 0;
+        }
+        
+        .demo-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: var(--clean-blur-sm);
+            border-radius: var(--clean-radius-large);
+            padding: var(--clean-space-6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .demo-title {
+            font-size: var(--clean-text-2xl);
+            font-weight: var(--clean-font-bold);
+            color: var(--clean-white);
+            margin-bottom: var(--clean-space-4);
+            text-align: center;
+        }
+        
+        .demo-subtitle {
+            font-size: var(--clean-text-lg);
+            font-weight: var(--clean-font-semibold);
+            color: var(--clean-white);
+            margin-bottom: var(--clean-space-6);
+            opacity: 0.9;
+        }
+        
+        .demo-code {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: var(--clean-radius-medium);
+            padding: var(--clean-space-4);
+            font-family: var(--clean-font-family-mono);
+            font-size: var(--clean-text-sm);
+            color: var(--clean-white);
+            margin: var(--clean-space-4) 0;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="clean-container">
+        <!-- Header -->
+        <header class="clean-navbar">
+            <div class="clean-container">
+                <div class="clean-flex clean-justify-between clean-items-center">
+                                    <a href="#" class="clean-navbar-brand">
+                    <i class="fas fa-palette"></i>
+                    Clean Design System
+                </a>
+                    <nav>
+                        <ul class="clean-navbar-nav">
+                            <li><a href="#tokens" class="clean-nav-link">Tokens</a></li>
+                            <li><a href="#utilities" class="clean-nav-link">Utilities</a></li>
+                            <li><a href="#components" class="clean-nav-link active">Components</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="clean-container clean-py-8">
+                    <h1 class="demo-title">Clean Design System</h1>
+        <p class="demo-subtitle clean-text-center">Liquid Glass Aesthetic with 4-Point Scale</p>
+
+            <!-- Buttons Section -->
+            <section class="demo-section">
+                <h2 class="demo-subtitle">Buttons</h2>
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <h3 class="clean-text-lg clean-font-semibold clean-text-primary clean-mb-4">Primary Buttons</h3>
+                        <div class="clean-flex clean-gap-3 clean-flex-wrap">
+                            <button class="clean-btn clean-btn-primary">Primary</button>
+                            <button class="clean-btn clean-btn-primary clean-btn-sm">Small</button>
+                            <button class="clean-btn clean-btn-primary clean-btn-lg">Large</button>
+                        </div>
+                        <div class="demo-code">
+&lt;button class="clean-btn clean-btn-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="clean-btn clean-btn-primary clean-btn-sm"&gt;Small&lt;/button&gt;
+&lt;button class="clean-btn clean-btn-primary clean-btn-lg"&gt;Large&lt;/button&gt;
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <h3 class="clean-text-lg clean-font-semibold clean-text-primary clean-mb-4">Button Variants</h3>
+                        <div class="clean-flex clean-gap-3 clean-flex-wrap">
+                            <button class="clean-btn clean-btn-secondary">Secondary</button>
+                            <button class="clean-btn clean-btn-outline">Outline</button>
+                            <button class="clean-btn clean-btn-ghost">Ghost</button>
+                        </div>
+                        <div class="demo-code">
+&lt;button class="clean-btn clean-btn-secondary"&gt;Secondary&lt;/button&gt;
+&lt;button class="clean-btn clean-btn-outline"&gt;Outline&lt;/button&gt;
+&lt;button class="clean-btn clean-btn-ghost"&gt;Ghost&lt;/button&gt;
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cards Section -->
+            <section class="demo-section">
+                <h2 class="demo-subtitle">Cards</h2>
+                <div class="demo-grid">
+                    <div class="clean-card">
+                        <div class="clean-card-header">
+                            <h3 class="clean-text-lg clean-font-semibold clean-text-primary">Card Header</h3>
+                        </div>
+                        <div class="clean-card-body">
+                            <p class="clean-text-primary">This is a card with the Liquid Glass aesthetic. It features backdrop blur and soft borders for a modern clean-inspired look.</p>
+                        </div>
+                        <div class="clean-card-footer">
+                            <button class="clean-btn clean-btn-primary clean-btn-sm">Action</button>
+                        </div>
+                    </div>
+
+                    <div class="clean-card">
+                        <div class="clean-card-body">
+                            <h3 class="clean-text-lg clean-font-semibold clean-text-primary clean-mb-4">Simple Card</h3>
+                            <p class="clean-text-primary clean-mb-4">A simple card without header or footer sections.</p>
+                            <div class="clean-flex clean-gap-3">
+                                <button class="clean-btn clean-btn-outline clean-btn-sm">Cancel</button>
+                                <button class="clean-btn clean-btn-primary clean-btn-sm">Confirm</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Form Elements Section -->
+            <section class="demo-section">
+                <h2 class="demo-subtitle">Form Elements</h2>
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <h3 class="clean-text-lg clean-font-semibold clean-text-primary clean-mb-4">Input Fields</h3>
+                        <div class="clean-flex clean-flex-col clean-gap-4">
+                            <input type="text" class="clean-input" placeholder="Enter your name">
+                            <input type="email" class="clean-input" placeholder="Enter your email">
+                            <div class="clean-input-group">
+                                <input type="text" class="clean-input" placeholder="Search...">
+                                <button class="clean-btn clean-btn-primary">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="demo-code">
+&lt;input type="text" class="clean-input" placeholder="Enter your name"&gt;
+&lt;div class="clean-input-group"&gt;
+  &lt;input type="text" class="clean-input" placeholder="Search..."&gt;
+  &lt;button class="clean-btn clean-btn-primary"&gt;Search&lt;/button&gt;
+&lt;/div&gt;
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <h3 class="clean-text-lg clean-font-semibold clean-text-primary clean-mb-4">Progress & Badges</h3>
+                        <div class="clean-flex clean-flex-col clean-gap-4">
+                            <div class="clean-progress">
+                                <div class="clean-progress-bar" style="width: 75%"></div>
+                            </div>
+                            <div class="clean-flex clean-gap-2 clean-flex-wrap">
+                                <span class="clean-badge clean-badge-primary">Primary</span>
+                                <span class="clean-badge clean-badge-success">Success</span>
+                                <span class="clean-badge clean-badge-warning">Warning</span>
+                                <span class="clean-badge clean-badge-error">Error</span>
+                            </div>
+                        </div>
+                        <div class="demo-code">
+&lt;div class="clean-progress"&gt;
+  &lt;div class="clean-progress-bar" style="width: 75%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;span class="clean-badge clean-badge-primary"&gt;Primary&lt;/span&gt;
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- List Section -->
+            <section class="demo-section">
+                <h2 class="demo-subtitle">Lists</h2>
+                <div class="demo-grid">
+                    <div class="clean-list-group">
+                        <div class="clean-list-item">
+                            <i class="fas fa-check clean-text-success"></i>
+                            <span>Task completed successfully</span>
+                        </div>
+                        <div class="clean-list-item">
+                            <i class="fas fa-clock clean-text-warning"></i>
+                            <span>Task in progress</span>
+                        </div>
+                        <div class="clean-list-item active">
+                            <i class="fas fa-star clean-text-primary"></i>
+                            <span>Featured task</span>
+                        </div>
+                        <div class="clean-list-item">
+                            <i class="fas fa-info clean-text-secondary"></i>
+                            <span>Information task</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Utilities Section -->
+            <section class="demo-section">
+                <h2 class="demo-subtitle">Utility Classes</h2>
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <h3 class="clean-text-lg clean-font-semibold clean-text-primary clean-mb-4">Spacing</h3>
+                        <div class="clean-flex clean-flex-col clean-gap-2">
+                            <div class="clean-bg-primary clean-text-white clean-p-2">Padding 2 (8px)</div>
+                            <div class="clean-bg-primary clean-text-white clean-p-4">Padding 4 (16px)</div>
+                            <div class="clean-bg-primary clean-text-white clean-p-6">Padding 6 (24px)</div>
+                        </div>
+                        <div class="demo-code">
+&lt;div class="clean-p-2"&gt;Padding 2 (8px)&lt;/div&gt;
+&lt;div class="clean-p-4"&gt;Padding 4 (16px)&lt;/div&gt;
+&lt;div class="clean-p-6"&gt;Padding 6 (24px)&lt;/div&gt;
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <h3 class="clean-text-lg clean-font-semibold clean-text-primary clean-mb-4">Typography</h3>
+                        <div class="clean-flex clean-flex-col clean-gap-2">
+                            <div class="clean-text-xs">Extra Small Text</div>
+                            <div class="clean-text-sm">Small Text</div>
+                            <div class="clean-text-base">Base Text</div>
+                            <div class="clean-text-lg">Large Text</div>
+                            <div class="clean-text-xl">Extra Large Text</div>
+                        </div>
+                        <div class="demo-code">
+&lt;div class="clean-text-xs"&gt;Extra Small&lt;/div&gt;
+&lt;div class="clean-text-lg"&gt;Large Text&lt;/div&gt;
+&lt;div class="clean-font-bold"&gt;Bold Text&lt;/div&gt;
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Elements -->
+            <section class="demo-section">
+                <h2 class="demo-subtitle">Interactive Elements</h2>
+                <div class="demo-grid">
+                    <div class="demo-item">
+                        <h3 class="clean-text-lg clean-font-semibold clean-text-primary clean-mb-4">Tooltips</h3>
+                        <div class="clean-flex clean-gap-4">
+                            <div class="clean-tooltip">
+                                <button class="clean-btn clean-btn-secondary">Hover me</button>
+                                <div class="clean-tooltip-content">This is a tooltip!</div>
+                            </div>
+                            <div class="clean-tooltip">
+                                <button class="clean-btn clean-btn-outline">Another tooltip</button>
+                                <div class="clean-tooltip-content">Another helpful tooltip</div>
+                            </div>
+                        </div>
+                        <div class="demo-code">
+&lt;div class="clean-tooltip"&gt;
+  &lt;button class="clean-btn"&gt;Hover me&lt;/button&gt;
+  &lt;div class="clean-tooltip-content"&gt;Tooltip text&lt;/div&gt;
+&lt;/div&gt;
+                        </div>
+                    </div>
+
+                    <div class="demo-item">
+                        <h3 class="clean-text-lg clean-font-semibold clean-text-primary clean-mb-4">Loading States</h3>
+                        <div class="clean-flex clean-gap-4 clean-items-center">
+                            <div class="clean-spinner"></div>
+                            <span class="clean-text-primary">Loading...</span>
+                        </div>
+                        <div class="demo-code">
+&lt;div class="clean-spinner"&gt;&lt;/div&gt;
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="clean-container clean-py-6">
+            <div class="clean-divider"></div>
+            <p class="clean-text-center clean-text-secondary clean-mt-4">
+                Clean Design System Demo - Built with Liquid Glass Aesthetic
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple theme toggle for demo
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add active state to navigation
+            const navLinks = document.querySelectorAll('.clean-nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

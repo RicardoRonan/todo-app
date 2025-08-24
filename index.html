@@ -2,41 +2,354 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://kit.fontawesome.com/53a149f81a.js" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style.css">
+    <title>Pixel Task Master - The Dev Ricardo</title>
+    <meta name="description" content="A retro-futuristic to-do app with gamification, drag & drop, and smart features">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="public/manifest.webmanifest">
+    <meta name="theme-color" content="#dc143c">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/clean.tokens.css">
+    <link rel="stylesheet" href="css/clean.utilities.css">
+    <link rel="stylesheet" href="css/clean.components.css">
 </head>
 <body>
-    <body>
-        <section>
-    <div class="container d-flex justify-content-center">
-        <div class="card m-5 p-5 shadow container-fluid text-center">
-      <div class="app">
-        <h1 class="m-4 p-3 shadow">To-Do List</h1>
-        <p>click on task to edit</p>
-        <div id="alpha">
-          <button class="alph-btn" onclick="sortList()">
-            Sort alphabetically
-          </button>
+    <!-- Header -->
+    <header class="app-header navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm sticky-top">
+        <div class="container-fluid">
+            <h1 class="app-title navbar-brand mb-0">
+                <i class="fas fa-gamepad me-2"></i>
+                Pixel Task Master
+            </h1>
+            <div class="header-controls d-flex gap-2">
+                <button id="theme-toggle" class="btn btn-outline-secondary btn-sm rounded-circle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="install-btn" class="btn btn-outline-primary btn-sm rounded-circle" aria-label="Install app" style="display: none;">
+                    <i class="fas fa-download"></i>
+                </button>
+            </div>
         </div>
-        <form onsubmit="addRecord()">
-          <input class="text-center m-2 form-control" type="text" placeholder="Add new item..." id="name" />
-          <div class="btn-container">
-              <button type="submit">&plus;</button>
-          </div>
-        </form>
-        <div class="ul-container" id="ul-cont">
-            <ul id="ul-list"></ul>
-        </div>
-      </div>
-    </div>
-     </div>
-     </section>
+    </header>
 
-    <script src="/script.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- Main Content -->
+    <main class="app-main container-fluid py-4">
+        <!-- Bootstrap Tabs Navigation -->
+        <ul class="nav nav-tabs nav-fill " id="mainTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="tasks-tab" data-bs-toggle="tab" data-bs-target="#tasks-view" type="button" role="tab" aria-controls="tasks-view" aria-selected="true">
+                    <i class="fas fa-tasks me-2"></i>
+                    Tasks
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="dashboard-tab" data-bs-toggle="tab" data-bs-target="#dashboard-view" type="button" role="tab" aria-controls="dashboard-view" aria-selected="false">
+                    <i class="fas fa-chart-bar me-2"></i>
+                    Dashboard
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings-view" type="button" role="tab" aria-controls="settings-view" aria-selected="false">
+                    <i class="fas fa-cog me-2"></i>
+                    Settings
+                </button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="mainTabsContent">
+            <!-- Tasks View -->
+            <div class="tab-pane fade show active" id="tasks-view" role="tabpanel" aria-labelledby="tasks-tab">
+            <div class="tasks-container shadow-sm">
+                <!-- Quick Add -->
+                <div class="quick-add card-header bg-light">
+                    <form id="quick-add-form">
+                        <div class="input-group">
+                            <input 
+                                type="text" 
+                                id="quick-add-input" 
+                                placeholder="Add task... (e.g., 'Pay rent tomorrow #bills !!')"
+                                class="form-control"
+                                aria-label="Quick add task"
+                            >
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Filters -->
+                <div class="filters card-body border-bottom">
+                    <div class="search-box mb-3">
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fas fa-search"></i>
+                            </span>
+                            <input type="text" id="search-input" class="form-control" placeholder="Search tasks..." aria-label="Search tasks">
+                        </div>
+                    </div>
+                    <div class="filter-tags d-flex gap-2 mb-3">
+                        <button class="filter-btn btn btn-outline-secondary btn-sm active" data-filter="all">All</button>
+                        <button class="filter-btn btn btn-outline-secondary btn-sm" data-filter="active">Active</button>
+                        <button class="filter-btn btn btn-outline-secondary btn-sm" data-filter="completed">Completed</button>
+                        <button class="filter-btn btn btn-outline-secondary btn-sm" data-filter="priority">Priority</button>
+                    </div>
+                    <div class="tag-filters d-flex gap-2 flex-wrap" id="tag-filters">
+                        <!-- Dynamic tag filters -->
+                    </div>
+                </div>
+
+                <!-- Drag and Drop Hint -->
+                <div class="drag-hint card-body border-top bg-light">
+                    <div class="d-flex align-items-center gap-2 text-muted small">
+                        <i class="fas fa-arrows-alt"></i>
+                        <span>💡 Tip: You can drag and drop tasks to reorder them!</span>
+                    </div>
+                </div>
+
+                <!-- Tasks List -->
+                <div class="tasks-list-container">
+                    <ul id="tasks-list" class="list-group list-group-flush">
+                        <!-- Tasks will be rendered here -->
+                    </ul>
+                </div>
+            </div>
+            </div>
+
+            <!-- Dashboard View -->
+            <div class="tab-pane fade" id="dashboard-view" role="tabpanel" aria-labelledby="dashboard-tab">
+            <div class="dashboard-container">
+                <!-- Stats Cards -->
+                <div class="stats-grid row mb-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="stat-card card h-100 shadow-sm">
+                            <div class="card-body d-flex align-items-center">
+                                <div class="stat-icon me-3">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3 class="mb-0" id="total-tasks">0</h3>
+                                    <p class="text-muted mb-0">Total Tasks</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="stat-card card h-100 shadow-sm">
+                            <div class="card-body d-flex align-items-center">
+                                <div class="stat-icon me-3">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3 class="mb-0" id="completed-tasks">0</h3>
+                                    <p class="text-muted mb-0">Completed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="stat-card card h-100 shadow-sm">
+                            <div class="card-body d-flex align-items-center">
+                                <div class="stat-icon me-3">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3 class="mb-0" id="current-streak">0</h3>
+                                    <p class="text-muted mb-0">Day Streak</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="stat-card card h-100 shadow-sm">
+                            <div class="card-body d-flex align-items-center">
+                                <div class="stat-icon me-3">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3 class="mb-0" id="current-level">1</h3>
+                                    <p class="text-muted mb-0">Level</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- XP Bar -->
+                <div class="xp-container card shadow-sm mb-4">
+                    <div class="card-body">
+                        <div class="xp-bar progress mb-2">
+                            <div class="xp-fill progress-bar bg-danger" id="xp-fill"></div>
+                        </div>
+                        <span class="xp-text text-muted" id="xp-text">0 / 100 XP</span>
+                    </div>
+                </div>
+
+                <!-- Charts -->
+                <div class="charts-grid row  mb-4">
+                    <div class="col-lg-6">
+                        <div class="chart-card card shadow-sm">
+                            <div class="card-body">
+                                <h3 class="card-title">Task Completion (This Week)</h3>
+                                <canvas id="weekly-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="chart-card card shadow-sm">
+                            <div class="card-body">
+                                <h3 class="card-title">Tasks by Tag</h3>
+                                <canvas id="tags-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Badges -->
+                <div class="badges-section card shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            <i class="fas fa-trophy me-2"></i>
+                            Achievements
+                        </h3>
+                        <p class="text-muted mb-4">
+                            Complete tasks and maintain streaks to unlock these achievements. Earned badges are highlighted in red!
+                        </p>
+                        <div class="badges-grid row g-3" id="badges-grid">
+                            <!-- Badges will be rendered here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <!-- Settings View -->
+            <div class="tab-pane fade" id="settings-view" role="tabpanel" aria-labelledby="settings-tab">
+                <div class="settings-container card shadow-sm mx-auto" style="max-width: 600px;">
+                    <div class="card-body p-4">
+                        <h2 class="card-title mb-4">Settings</h2>
+                        
+                        <!-- Theme Settings -->
+                        <div class="settings-group mb-4">
+                            <h3 class="h5 mb-3">Theme</h3>
+                            <div class="theme-options d-flex gap-3 flex-wrap">
+                                <label class="theme-option d-flex flex-column align-items-center">
+                                    <input type="radio" name="theme" value="light" checked class="d-none">
+                                    <span class="theme-preview light mb-2"></span>
+                                    <span class="small">Light</span>
+                                </label>
+                                <label class="theme-option d-flex flex-column align-items-center">
+                                    <input type="radio" name="theme" value="dark" class="d-none">
+                                    <span class="theme-preview dark mb-2"></span>
+                                    <span class="small">Dark</span>
+                                </label>
+                                <label class="theme-option d-flex flex-column align-items-center">
+                                    <input type="radio" name="theme" value="crt" class="d-none">
+                                    <span class="theme-preview crt mb-2"></span>
+                                    <span class="small">Retro CRT</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Sound Settings -->
+                        <div class="settings-group mb-4">
+                            <h3 class="h5 mb-3">Sound Effects</h3>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="sound-enabled" checked>
+                                <label class="form-check-label" for="sound-enabled">
+                                    Enable sound effects
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Export/Import -->
+                        <div class="settings-group mb-4">
+                            <h3 class="h5 mb-3">Data Management</h3>
+                            <div class="data-actions d-flex gap-2 flex-wrap">
+                                <button id="export-json" class="btn btn-outline-secondary btn-sm">
+                                    <i class="fas fa-download me-1"></i>
+                                    Export JSON
+                                </button>
+                                <button id="export-csv" class="btn btn-outline-secondary btn-sm">
+                                    <i class="fas fa-file-csv me-1"></i>
+                                    Export CSV
+                                </button>
+                                <label class="btn btn-outline-secondary btn-sm file-input-wrapper">
+                                    <i class="fas fa-upload me-1"></i>
+                                    Import JSON
+                                    <input type="file" id="import-json" accept=".json" class="d-none">
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Reset Data -->
+                        <div class="settings-group">
+                            <h3 class="h5 mb-3">Reset</h3>
+                            <button id="reset-data" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash me-1"></i>
+                                Reset All Data
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer bg-light border-top mt-auto">
+        <div class="container-fluid py-3">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                <div class="footer-stats d-flex gap-3">
+                    <span class="text-muted small" id="footer-streak">0 day streak</span>
+                    <span class="text-muted small" id="footer-level">Level 1</span>
+                </div>
+                <div class="footer-brand">
+                    <span class="text-muted small">Made by The Dev Ricardo</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CRT Scanlines Overlay -->
+    <div id="crt-overlay" class="crt-overlay"></div>
+
+    <!-- Confetti Container -->
+    <div id="confetti-container"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript Modules -->
+    <script type="module" src="js/app.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('public/service-worker.js')
+                    .then(registration => console.log('SW registered'))
+                    .catch(error => console.log('SW registration failed'));
+            });
+        }
+    </script>
 </body>
 </html>

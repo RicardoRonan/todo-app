@@ -1,0 +1,278 @@
+/* Clean Design Utilities - Framework-Agnostic Utility Classes */
+
+/* ===== SPACING UTILITIES ===== */
+
+/* Padding Utilities */
+[data-theme="clean"] .clean-p-0 { padding: var(--clean-space-0); }
+[data-theme="clean"] .clean-p-1 { padding: var(--clean-space-1); }
+[data-theme="clean"] .clean-p-2 { padding: var(--clean-space-2); }
+[data-theme="clean"] .clean-p-3 { padding: var(--clean-space-3); }
+[data-theme="clean"] .clean-p-4 { padding: var(--clean-space-4); }
+[data-theme="clean"] .clean-p-5 { padding: var(--clean-space-5); }
+[data-theme="clean"] .clean-p-6 { padding: var(--clean-space-6); }
+[data-theme="clean"] .clean-p-8 { padding: var(--clean-space-8); }
+[data-theme="clean"] .clean-p-10 { padding: var(--clean-space-10); }
+[data-theme="clean"] .clean-p-12 { padding: var(--clean-space-12); }
+[data-theme="clean"] .clean-p-16 { padding: var(--clean-space-16); }
+[data-theme="clean"] .clean-p-20 { padding: var(--clean-space-20); }
+
+/* Padding X (Horizontal) */
+[data-theme="clean"] .clean-px-0 { padding-left: var(--clean-space-0); padding-right: var(--clean-space-0); }
+[data-theme="clean"] .clean-px-1 { padding-left: var(--clean-space-1); padding-right: var(--clean-space-1); }
+[data-theme="clean"] .clean-px-2 { padding-left: var(--clean-space-2); padding-right: var(--clean-space-2); }
+[data-theme="clean"] .clean-px-3 { padding-left: var(--clean-space-3); padding-right: var(--clean-space-3); }
+[data-theme="clean"] .clean-px-4 { padding-left: var(--clean-space-4); padding-right: var(--clean-space-4); }
+[data-theme="clean"] .clean-px-5 { padding-left: var(--clean-space-5); padding-right: var(--clean-space-5); }
+[data-theme="clean"] .clean-px-6 { padding-left: var(--clean-space-6); padding-right: var(--clean-space-6); }
+[data-theme="clean"] .clean-px-8 { padding-left: var(--clean-space-8); padding-right: var(--clean-space-8); }
+[data-theme="clean"] .clean-px-10 { padding-left: var(--clean-space-10); padding-right: var(--clean-space-10); }
+[data-theme="clean"] .clean-px-12 { padding-left: var(--clean-space-12); padding-right: var(--clean-space-12); }
+[data-theme="clean"] .clean-px-16 { padding-left: var(--clean-space-16); padding-right: var(--clean-space-16); }
+[data-theme="clean"] .clean-px-20 { padding-left: var(--clean-space-20); padding-right: var(--clean-space-20); }
+
+/* Padding Y (Vertical) */
+[data-theme="clean"] .clean-py-0 { padding-top: var(--clean-space-0); padding-bottom: var(--clean-space-0); }
+[data-theme="clean"] .clean-py-1 { padding-top: var(--clean-space-1); padding-bottom: var(--clean-space-1); }
+[data-theme="clean"] .clean-py-2 { padding-top: var(--clean-space-2); padding-bottom: var(--clean-space-2); }
+[data-theme="clean"] .clean-py-3 { padding-top: var(--clean-space-3); padding-bottom: var(--clean-space-3); }
+[data-theme="clean"] .clean-py-4 { padding-top: var(--clean-space-4); padding-bottom: var(--clean-space-4); }
+[data-theme="clean"] .clean-py-5 { padding-top: var(--clean-space-5); padding-bottom: var(--clean-space-5); }
+[data-theme="clean"] .clean-py-6 { padding-top: var(--clean-space-6); padding-bottom: var(--clean-space-6); }
+[data-theme="clean"] .clean-py-8 { padding-top: var(--clean-space-8); padding-bottom: var(--clean-space-8); }
+[data-theme="clean"] .clean-py-10 { padding-top: var(--clean-space-10); padding-bottom: var(--clean-space-10); }
+[data-theme="clean"] .clean-py-12 { padding-top: var(--clean-space-12); padding-bottom: var(--clean-space-12); }
+[data-theme="clean"] .clean-py-16 { padding-top: var(--clean-space-16); padding-bottom: var(--clean-space-16); }
+[data-theme="clean"] .clean-py-20 { padding-top: var(--clean-space-20); padding-bottom: var(--clean-space-20); }
+
+/* Margin Utilities */
+[data-theme="clean"] .clean-m-0 { margin: var(--clean-space-0); }
+[data-theme="clean"] .clean-m-1 { margin: var(--clean-space-1); }
+[data-theme="clean"] .clean-m-2 { margin: var(--clean-space-2); }
+[data-theme="clean"] .clean-m-3 { margin: var(--clean-space-3); }
+[data-theme="clean"] .clean-m-4 { margin: var(--clean-space-4); }
+[data-theme="clean"] .clean-m-5 { margin: var(--clean-space-5); }
+[data-theme="clean"] .clean-m-6 { margin: var(--clean-space-6); }
+[data-theme="clean"] .clean-m-8 { margin: var(--clean-space-8); }
+[data-theme="clean"] .clean-m-10 { margin: var(--clean-space-10); }
+[data-theme="clean"] .clean-m-12 { margin: var(--clean-space-12); }
+[data-theme="clean"] .clean-m-16 { margin: var(--clean-space-16); }
+[data-theme="clean"] .clean-m-20 { margin: var(--clean-space-20); }
+
+/* Margin X (Horizontal) */
+[data-theme="clean"] .clean-mx-0 { margin-left: var(--clean-space-0); margin-right: var(--clean-space-0); }
+[data-theme="clean"] .clean-mx-1 { margin-left: var(--clean-space-1); margin-right: var(--clean-space-1); }
+[data-theme="clean"] .clean-mx-2 { margin-left: var(--clean-space-2); margin-right: var(--clean-space-2); }
+[data-theme="clean"] .clean-mx-3 { margin-left: var(--clean-space-3); margin-right: var(--clean-space-3); }
+[data-theme="clean"] .clean-mx-4 { margin-left: var(--clean-space-4); margin-right: var(--clean-space-4); }
+[data-theme="clean"] .clean-mx-5 { margin-left: var(--clean-space-5); margin-right: var(--clean-space-5); }
+[data-theme="clean"] .clean-mx-6 { margin-left: var(--clean-space-6); margin-right: var(--clean-space-6); }
+[data-theme="clean"] .clean-mx-8 { margin-left: var(--clean-space-8); margin-right: var(--clean-space-8); }
+[data-theme="clean"] .clean-mx-10 { margin-left: var(--clean-space-10); margin-right: var(--clean-space-10); }
+[data-theme="clean"] .clean-mx-12 { margin-left: var(--clean-space-12); margin-right: var(--clean-space-12); }
+[data-theme="clean"] .clean-mx-16 { margin-left: var(--clean-space-16); margin-right: var(--clean-space-16); }
+[data-theme="clean"] .clean-mx-20 { margin-left: var(--clean-space-20); margin-right: var(--clean-space-20); }
+
+/* Margin Y (Vertical) */
+[data-theme="clean"] .clean-my-0 { margin-top: var(--clean-space-0); margin-bottom: var(--clean-space-0); }
+[data-theme="clean"] .clean-my-1 { margin-top: var(--clean-space-1); margin-bottom: var(--clean-space-1); }
+[data-theme="clean"] .clean-my-2 { margin-top: var(--clean-space-2); margin-bottom: var(--clean-space-2); }
+[data-theme="clean"] .clean-my-3 { margin-top: var(--clean-space-3); margin-bottom: var(--clean-space-3); }
+[data-theme="clean"] .clean-my-4 { margin-top: var(--clean-space-4); margin-bottom: var(--clean-space-4); }
+[data-theme="clean"] .clean-my-5 { margin-top: var(--clean-space-5); margin-bottom: var(--clean-space-5); }
+[data-theme="clean"] .clean-my-6 { margin-top: var(--clean-space-6); margin-bottom: var(--clean-space-6); }
+[data-theme="clean"] .clean-my-8 { margin-top: var(--clean-space-8); margin-bottom: var(--clean-space-8); }
+[data-theme="clean"] .clean-my-10 { margin-top: var(--clean-space-10); margin-bottom: var(--clean-space-10); }
+[data-theme="clean"] .clean-my-12 { margin-top: var(--clean-space-12); margin-bottom: var(--clean-space-12); }
+[data-theme="clean"] .clean-my-16 { margin-top: var(--clean-space-16); margin-bottom: var(--clean-space-16); }
+[data-theme="clean"] .clean-my-20 { margin-top: var(--clean-space-20); margin-bottom: var(--clean-space-20); }
+
+/* Gap Utilities */
+[data-theme="clean"] .clean-gap-0 { gap: var(--clean-space-0); }
+[data-theme="clean"] .clean-gap-1 { gap: var(--clean-space-1); }
+[data-theme="clean"] .clean-gap-2 { gap: var(--clean-space-2); }
+[data-theme="clean"] .clean-gap-3 { gap: var(--clean-space-3); }
+[data-theme="clean"] .clean-gap-4 { gap: var(--clean-space-4); }
+[data-theme="clean"] .clean-gap-5 { gap: var(--clean-space-5); }
+[data-theme="clean"] .clean-gap-6 { gap: var(--clean-space-6); }
+[data-theme="clean"] .clean-gap-8 { gap: var(--clean-space-8); }
+[data-theme="clean"] .clean-gap-10 { gap: var(--clean-space-10); }
+[data-theme="clean"] .clean-gap-12 { gap: var(--clean-space-12); }
+[data-theme="clean"] .clean-gap-16 { gap: var(--clean-space-16); }
+[data-theme="clean"] .clean-gap-20 { gap: var(--clean-space-20); }
+
+/* ===== LAYOUT UTILITIES ===== */
+
+/* Display */
+[data-theme="clean"] .clean-block { display: block; }
+[data-theme="clean"] .clean-inline-block { display: inline-block; }
+[data-theme="clean"] .clean-inline { display: inline; }
+[data-theme="clean"] .clean-flex { display: flex; }
+[data-theme="clean"] .clean-inline-flex { display: inline-flex; }
+/* Clean grid utility removed to avoid conflicts with Bootstrap */
+[data-theme="clean"] .clean-hidden { display: none; }
+
+/* Flex Direction */
+[data-theme="clean"] .clean-flex-row { flex-direction: row; }
+[data-theme="clean"] .clean-flex-row-reverse { flex-direction: row-reverse; }
+[data-theme="clean"] .clean-flex-col { flex-direction: column; }
+[data-theme="clean"] .clean-flex-col-reverse { flex-direction: column-reverse; }
+
+/* Flex Wrap */
+[data-theme="clean"] .clean-flex-wrap { flex-wrap: wrap; }
+[data-theme="clean"] .clean-flex-nowrap { flex-wrap: nowrap; }
+[data-theme="clean"] .clean-flex-wrap-reverse { flex-wrap: wrap-reverse; }
+
+/* Flex Grow/Shrink */
+[data-theme="clean"] .clean-flex-1 { flex: 1 1 0%; }
+[data-theme="clean"] .clean-flex-auto { flex: 1 1 auto; }
+[data-theme="clean"] .clean-flex-initial { flex: 0 1 auto; }
+[data-theme="clean"] .clean-flex-none { flex: none; }
+
+/* Justify Content */
+[data-theme="clean"] .clean-justify-start { justify-content: flex-start; }
+[data-theme="clean"] .clean-justify-end { justify-content: flex-end; }
+[data-theme="clean"] .clean-justify-center { justify-content: center; }
+[data-theme="clean"] .clean-justify-between { justify-content: space-between; }
+[data-theme="clean"] .clean-justify-around { justify-content: space-around; }
+[data-theme="clean"] .clean-justify-evenly { justify-content: space-evenly; }
+
+/* Align Items */
+[data-theme="clean"] .clean-items-start { align-items: flex-start; }
+[data-theme="clean"] .clean-items-end { align-items: flex-end; }
+[data-theme="clean"] .clean-items-center { align-items: center; }
+[data-theme="clean"] .clean-items-baseline { align-items: baseline; }
+[data-theme="clean"] .clean-items-stretch { align-items: stretch; }
+
+/* Align Self */
+[data-theme="clean"] .clean-self-auto { align-self: auto; }
+[data-theme="clean"] .clean-self-start { align-self: flex-start; }
+[data-theme="clean"] .clean-self-end { align-self: flex-end; }
+[data-theme="clean"] .clean-self-center { align-self: center; }
+[data-theme="clean"] .clean-self-stretch { align-self: stretch; }
+
+/* Width & Height */
+[data-theme="clean"] .clean-w-full { width: 100%; }
+[data-theme="clean"] .clean-w-auto { width: auto; }
+[data-theme="clean"] .clean-w-screen { width: 100vw; }
+[data-theme="clean"] .clean-h-full { height: 100%; }
+[data-theme="clean"] .clean-h-auto { height: auto; }
+[data-theme="clean"] .clean-h-screen { height: 100vh; }
+
+/* Min/Max Width & Height */
+[data-theme="clean"] .clean-min-w-0 { min-width: 0px; }
+[data-theme="clean"] .clean-min-h-0 { min-height: 0px; }
+[data-theme="clean"] .clean-max-w-none { max-width: none; }
+[data-theme="clean"] .clean-max-h-none { max-height: none; }
+
+/* ===== TYPOGRAPHY UTILITIES ===== */
+
+/* Font Family */
+[data-theme="clean"] .clean-font-sans { font-family: var(--clean-font-family); }
+[data-theme="clean"] .clean-font-mono { font-family: var(--clean-font-family-mono); }
+
+/* Font Size */
+[data-theme="clean"] .clean-text-xs { font-size: var(--clean-text-xs); }
+[data-theme="clean"] .clean-text-sm { font-size: var(--clean-text-sm); }
+[data-theme="clean"] .clean-text-base { font-size: var(--clean-text-base); }
+[data-theme="clean"] .clean-text-lg { font-size: var(--clean-text-lg); }
+[data-theme="clean"] .clean-text-xl { font-size: var(--clean-text-xl); }
+[data-theme="clean"] .clean-text-2xl { font-size: var(--clean-text-2xl); }
+[data-theme="clean"] .clean-text-3xl { font-size: var(--clean-text-3xl); }
+[data-theme="clean"] .clean-text-4xl { font-size: var(--clean-text-4xl); }
+[data-theme="clean"] .clean-text-5xl { font-size: var(--clean-text-5xl); }
+[data-theme="clean"] .clean-text-6xl { font-size: var(--clean-text-6xl); }
+
+/* Font Weight */
+[data-theme="clean"] .clean-font-thin { font-weight: var(--clean-font-thin); }
+[data-theme="clean"] .clean-font-light { font-weight: var(--clean-font-light); }
+[data-theme="clean"] .clean-font-normal { font-weight: var(--clean-font-normal); }
+[data-theme="clean"] .clean-font-medium { font-weight: var(--clean-font-medium); }
+[data-theme="clean"] .clean-font-semibold { font-weight: var(--clean-font-semibold); }
+[data-theme="clean"] .clean-font-bold { font-weight: var(--clean-font-bold); }
+[data-theme="clean"] .clean-font-extrabold { font-weight: var(--clean-font-extrabold); }
+[data-theme="clean"] .clean-font-black { font-weight: var(--clean-font-black); }
+
+/* Line Height */
+[data-theme="clean"] .clean-leading-none { line-height: var(--clean-leading-none); }
+[data-theme="clean"] .clean-leading-tight { line-height: var(--clean-leading-tight); }
+[data-theme="clean"] .clean-leading-snug { line-height: var(--clean-leading-snug); }
+[data-theme="clean"] .clean-leading-normal { line-height: var(--clean-leading-normal); }
+[data-theme="clean"] .clean-leading-relaxed { line-height: var(--clean-leading-relaxed); }
+[data-theme="clean"] .clean-leading-loose { line-height: var(--clean-leading-loose); }
+
+/* Text Alignment */
+[data-theme="clean"] .clean-text-left { text-align: left; }
+[data-theme="clean"] .clean-text-center { text-align: center; }
+[data-theme="clean"] .clean-text-right { text-align: right; }
+[data-theme="clean"] .clean-text-justify { text-align: justify; }
+
+/* Text Colour */
+[data-theme="clean"] .clean-text-primary { color: var(--clean-text-primary); }
+[data-theme="clean"] .clean-text-secondary { color: var(--clean-text-secondary); }
+[data-theme="clean"] .clean-text-tertiary { color: var(--clean-text-tertiary); }
+[data-theme="clean"] .clean-text-quaternary { color: var(--clean-text-quaternary); }
+
+/* ===== INTERACTIVE UTILITIES ===== */
+
+/* Tap Target */
+[data-theme="clean"] .clean-tap-target {
+  min-height: var(--clean-tap-target);
+  min-width: var(--clean-tap-target);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cursor */
+[data-theme="clean"] .clean-cursor-pointer { cursor: pointer; }
+[data-theme="clean"] .clean-cursor-default { cursor: default; }
+[data-theme="clean"] .clean-cursor-not-allowed { cursor: not-allowed; }
+
+/* User Select */
+[data-theme="clean"] .clean-select-none { user-select: none; }
+[data-theme="clean"] .clean-select-text { user-select: text; }
+[data-theme="clean"] .clean-select-all { user-select: all; }
+
+/* Pointer Events */
+[data-theme="clean"] .clean-pointer-events-none { pointer-events: none; }
+[data-theme="clean"] .clean-pointer-events-auto { pointer-events: auto; }
+
+/* ===== POSITIONING UTILITIES ===== */
+
+/* Position */
+[data-theme="clean"] .clean-static { position: static; }
+[data-theme="clean"] .clean-relative { position: relative; }
+[data-theme="clean"] .clean-absolute { position: absolute; }
+[data-theme="clean"] .clean-fixed { position: fixed; }
+[data-theme="clean"] .clean-sticky { position: sticky; }
+
+/* Z-Index */
+[data-theme="clean"] .clean-z-0 { z-index: 0; }
+[data-theme="clean"] .clean-z-10 { z-index: 10; }
+[data-theme="clean"] .clean-z-20 { z-index: 20; }
+[data-theme="clean"] .clean-z-30 { z-index: 30; }
+[data-theme="clean"] .clean-z-40 { z-index: 40; }
+[data-theme="clean"] .clean-z-50 { z-index: 50; }
+[data-theme="clean"] .clean-z-dropdown { z-index: var(--clean-z-dropdown); }
+[data-theme="clean"] .clean-z-sticky { z-index: var(--clean-z-sticky); }
+[data-theme="clean"] .clean-z-fixed { z-index: var(--clean-z-fixed); }
+[data-theme="clean"] .clean-z-modal { z-index: var(--clean-z-modal); }
+[data-theme="clean"] .clean-z-popover { z-index: var(--clean-z-popover); }
+[data-theme="clean"] .clean-z-tooltip { z-index: var(--clean-z-tooltip); }
+
+/* ===== OVERFLOW UTILITIES ===== */
+
+[data-theme="clean"] .clean-overflow-auto { overflow: auto; }
+[data-theme="clean"] .clean-overflow-hidden { overflow: hidden; }
+[data-theme="clean"] .clean-overflow-visible { overflow: visible; }
+[data-theme="clean"] .clean-overflow-scroll { overflow: scroll; }
+
+[data-theme="clean"] .clean-overflow-x-auto { overflow-x: auto; }
+[data-theme="clean"] .clean-overflow-x-hidden { overflow-x: hidden; }
+[data-theme="clean"] .clean-overflow-x-visible { overflow-x: visible; }
+[data-theme="clean"] .clean-overflow-x-scroll { overflow-x: scroll; }
+
+[data-theme="clean"] .clean-overflow-y-auto { overflow-y: auto; }
+[data-theme="clean"] .clean-overflow-y-hidden { overflow-y: hidden; }
+[data-theme="clean"] .clean-overflow-y-visible { overflow-y: visible; }
+[data-theme="clean"] .clean-overflow-y-scroll { overflow-y: scroll; }

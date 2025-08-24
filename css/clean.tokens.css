@@ -1,0 +1,244 @@
+/* Clean Design Tokens - 4-Point Scale System */
+
+/* ===== COLOUR TOKENS ===== */
+:root {
+  /* Primary Colours */
+  --clean-primary: #007AFF;
+  --clean-primary-dark: #0056CC;
+  --clean-primary-light: #4DA3FF;
+  
+  /* Secondary Colours */
+  --clean-secondary: #5856D6;
+  --clean-secondary-dark: #3634A3;
+  --clean-secondary-light: #7B79E3;
+  
+  /* Success Colours */
+  --clean-success: #34C759;
+  --clean-success-dark: #28A745;
+  --clean-success-light: #5CD675;
+  
+  /* Warning Colours */
+  --clean-warning: #FF9500;
+  --clean-warning-dark: #CC7700;
+  --clean-warning-light: #FFB340;
+  
+  /* Error Colours */
+  --clean-error: #FF3B30;
+  --clean-error-dark: #CC2E26;
+  --clean-error-light: #FF6B61;
+  
+  /* Neutral Colours */
+  --clean-white: #FFFFFF;
+  --clean-black: #000000;
+  --clean-gray-50: #F9F9F9;
+  --clean-gray-100: #F2F2F7;
+  --clean-gray-200: #E5E5EA;
+  --clean-gray-300: #D1D1D6;
+  --clean-gray-400: #C7C7CC;
+  --clean-gray-500: #AEAEB2;
+  --clean-gray-600: #8E8E93;
+  --clean-gray-700: #636366;
+  --clean-gray-800: #48484A;
+  --clean-gray-900: #1C1C1E;
+  
+  /* Semantic Colours */
+  --clean-text-primary: var(--clean-gray-900);
+  --clean-text-secondary: var(--clean-gray-600);
+  --clean-text-tertiary: var(--clean-gray-500);
+  --clean-text-quaternary: var(--clean-gray-400);
+  
+  --clean-bg-primary: var(--clean-white);
+  --clean-bg-secondary: var(--clean-gray-50);
+  --clean-bg-tertiary: var(--clean-gray-100);
+  --clean-bg-quaternary: var(--clean-gray-200);
+  
+  --clean-border-primary: var(--clean-gray-200);
+  --clean-border-secondary: var(--clean-gray-300);
+  --clean-border-tertiary: var(--clean-gray-400);
+}
+
+/* Dark Mode Colours */
+[data-theme="clean"] {
+  --clean-text-primary: var(--clean-white);
+  --clean-text-secondary: var(--clean-gray-400);
+  --clean-text-tertiary: var(--clean-gray-500);
+  --clean-text-quaternary: var(--clean-gray-600);
+  
+  --clean-bg-primary: var(--clean-gray-900);
+  --clean-bg-secondary: var(--clean-gray-800);
+  --clean-bg-tertiary: var(--clean-gray-700);
+  --clean-bg-quaternary: var(--clean-gray-600);
+  
+  --clean-border-primary: var(--clean-gray-700);
+  --clean-border-secondary: var(--clean-gray-600);
+  --clean-border-tertiary: var(--clean-gray-500);
+}
+
+/* ===== SPACING TOKENS (4-POINT SCALE) ===== */
+:root {
+  /* Clean spacing tokens - compatible with main theme spacing */
+  --clean-space-0: 0;
+  --clean-space-1: 4px;
+  --clean-space-2: 8px;
+  --clean-space-3: 12px;
+  --clean-space-4: 16px;
+  --clean-space-5: 20px;
+  --clean-space-6: 24px;
+  --clean-space-7: 28px;
+  --clean-space-8: 32px;
+  --clean-space-9: 36px;
+  --clean-space-10: 40px;
+  --clean-space-11: 44px;
+  --clean-space-12: 48px;
+  --clean-space-13: 52px;
+  --clean-space-14: 56px;
+  --clean-space-15: 60px;
+  --clean-space-16: 64px;
+  --clean-space-17: 68px;
+  --clean-space-18: 72px;
+  --clean-space-19: 76px;
+  --clean-space-20: 80px;
+  
+  /* Legacy spacing aliases for backward compatibility */
+  --clean-spacing-xs: var(--clean-space-1);
+  --clean-spacing-sm: var(--clean-space-2);
+  --clean-spacing-md: var(--clean-space-4);
+  --clean-spacing-lg: var(--clean-space-6);
+  --clean-spacing-xl: var(--clean-space-8);
+  --clean-spacing-xxl: var(--clean-space-12);
+}
+
+/* ===== SIZING TOKENS ===== */
+:root {
+  --clean-size-0: 0;
+  --clean-size-1: 4px;
+  --clean-size-2: 8px;
+  --clean-size-3: 12px;
+  --clean-size-4: 16px;
+  --clean-size-5: 20px;
+  --clean-size-6: 24px;
+  --clean-size-7: 28px;
+  --clean-size-8: 32px;
+  --clean-size-9: 36px;
+  --clean-size-10: 40px;
+  --clean-size-11: 44px;
+  --clean-size-12: 48px;
+  --clean-size-13: 52px;
+  --clean-size-14: 56px;
+  --clean-size-15: 60px;
+  --clean-size-16: 64px;
+  --clean-size-17: 68px;
+  --clean-size-18: 72px;
+  --clean-size-19: 76px;
+  --clean-size-20: 80px;
+  
+  /* Common Component Sizes */
+  --clean-tap-target: 44px;
+  --clean-icon-small: 16px;
+  --clean-icon-medium: 20px;
+  --clean-icon-large: 24px;
+  --clean-icon-xlarge: 32px;
+}
+
+/* ===== BORDER RADIUS TOKENS ===== */
+:root {
+  --clean-radius-none: 0;
+  --clean-radius-small: 6px;
+  --clean-radius-medium: 8px;
+  --clean-radius-large: 12px;
+  --clean-radius-xlarge: 16px;
+  --clean-radius-full: 9999px;
+}
+
+/* ===== TYPOGRAPHY TOKENS ===== */
+:root {
+  /* Font Families */
+  --clean-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --clean-font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  
+  /* Font Sizes - Fluid Typography */
+  --clean-text-xs: clamp(10px, 0.75rem, 12px);
+  --clean-text-sm: clamp(12px, 0.875rem, 14px);
+  --clean-text-base: clamp(14px, 1rem, 16px);
+  --clean-text-lg: clamp(16px, 1.125rem, 18px);
+  --clean-text-xl: clamp(18px, 1.25rem, 20px);
+  --clean-text-2xl: clamp(20px, 1.5rem, 24px);
+  --clean-text-3xl: clamp(24px, 1.875rem, 30px);
+  --clean-text-4xl: clamp(30px, 2.25rem, 36px);
+  --clean-text-5xl: clamp(36px, 3rem, 48px);
+  --clean-text-6xl: clamp(48px, 3.75rem, 60px);
+  
+  /* Font Weights */
+  --clean-font-thin: 100;
+  --clean-font-light: 300;
+  --clean-font-normal: 400;
+  --clean-font-medium: 500;
+  --clean-font-semibold: 600;
+  --clean-font-bold: 700;
+  --clean-font-extrabold: 800;
+  --clean-font-black: 900;
+  
+  /* Line Heights */
+  --clean-leading-none: 1;
+  --clean-leading-tight: 1.25;
+  --clean-leading-snug: 1.375;
+  --clean-leading-normal: 1.5;
+  --clean-leading-relaxed: 1.625;
+  --clean-leading-loose: 2;
+  
+  /* Letter Spacing */
+  --clean-tracking-tighter: -0.05em;
+  --clean-tracking-tight: -0.025em;
+  --clean-tracking-normal: 0em;
+  --clean-tracking-wide: 0.025em;
+  --clean-tracking-wider: 0.05em;
+  --clean-tracking-widest: 0.1em;
+}
+
+/* ===== SHADOW TOKENS ===== */
+:root {
+  --clean-shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --clean-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --clean-shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --clean-shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --clean-shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --clean-shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --clean-shadow-2xl: 0 50px 100px -20px rgba(0, 0, 0, 0.25);
+  
+  /* Coloured Shadows */
+  --clean-shadow-primary: 0 4px 14px 0 rgba(0, 122, 255, 0.39);
+  --clean-shadow-success: 0 4px 14px 0 rgba(52, 199, 89, 0.39);
+  --clean-shadow-warning: 0 4px 14px 0 rgba(255, 149, 0, 0.39);
+  --clean-shadow-error: 0 4px 14px 0 rgba(255, 59, 48, 0.39);
+}
+
+/* ===== TRANSITION TOKENS ===== */
+:root {
+  --clean-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --clean-transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --clean-transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --clean-transition-bounce: 250ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ===== Z-INDEX TOKENS ===== */
+:root {
+  --clean-z-dropdown: 1000;
+  --clean-z-sticky: 1020;
+  --clean-z-fixed: 1030;
+  --clean-z-modal-backdrop: 1040;
+  --clean-z-modal: 1050;
+  --clean-z-popover: 1060;
+  --clean-z-tooltip: 1070;
+  --clean-z-toast: 1080;
+}
+
+/* ===== BACKDROP BLUR TOKENS ===== */
+:root {
+  --clean-blur-sm: blur(4px);
+  --clean-blur-base: blur(8px);
+  --clean-blur-md: blur(12px);
+  --clean-blur-lg: blur(16px);
+  --clean-blur-xl: blur(24px);
+  --clean-blur-2xl: blur(40px);
+  --clean-blur-3xl: blur(64px);
+}
