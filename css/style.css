@@ -242,7 +242,6 @@
 }
 .tasks-container.shadow-sm {
   margin-top: 2rem;
-  background-color: #ffffff !important;
   border-color: #dee2e6 !important;
   border-radius: var(--border-radius-large);
   box-shadow: var(--shadow-sm);
